@@ -1,5 +1,5 @@
 class ExtImplByFiddle
   def self.library(name)
-    @lib
+    dlload name
   end
 end
