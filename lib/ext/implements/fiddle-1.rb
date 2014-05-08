@@ -6,5 +6,7 @@ class ExtImplByFiddle
   end
 
   def self.function(name, args, ret)
+    args_to_s = args.join(',')
+    extern '#{ret} #{name}(#{args_to_s})'
   end
 end
