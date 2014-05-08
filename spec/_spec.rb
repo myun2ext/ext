@@ -1,9 +1,9 @@
-require './lib/ext/implements/fiddle_by_importer'
+require './lib/library'
 
 describe { it {
 
 module User32
-  extend Ext::Implements::FiddleByImporter
+  extend Library
 
   library "user32"
   declare "MessageBox", ["void*", "const char*", "const char*", "int"], "int"
