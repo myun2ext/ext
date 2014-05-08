@@ -1,17 +1,18 @@
 require 'fiddle'
+require 'fiddle/import'
 
 module Ext
   module Implements
     module FiddleByImporter
-      extend Fiddle::Importer
+      include Fiddle::Importer
 
-      def self.library(name)
-        dlload name
+      def library(name)
+        self.dlload name
       end
 
-      def self.declare(name, args, ret)
+      def declare(name, args, ret)
         args_to_s = args.join(',')
-        extern '#{ret} #{name}(#{args_to_s})'
+        self.extern "#{ret} #{name}(#{args_to_s})"
       end
     end
   end
