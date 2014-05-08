@@ -7,12 +7,12 @@ module Ext
       include Fiddle::Importer
 
       def library(name)
-        self.dlload name
+        dlload name
       end
 
       def declare(name, args, ret)
         args_to_s = args.join(',')
-        self.extern "#{ret} #{name}(#{args_to_s})"
+        extern "#{ret} #{name}(#{args_to_s})"
       end
     end
   end
